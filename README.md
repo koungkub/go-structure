@@ -1,41 +1,41 @@
-# Golang API Example
+# Go Project Structure Example
 
-[![Build Status](https://travis-ci.org/koungkub/go-api-example.svg?branch=master)](https://travis-ci.org/koungkub/go-api-example)
+[![Build Status](https://travis-ci.org/koungkub/go-structure.svg?branch=master)](https://travis-ci.org/koungkub/go-structure)
 
 using [echo](https://echo.labstack.com/) for web framework
 
-## Disclaimer
-
 this project not following [golang-project-layout](https://github.com/golang-standards/project-layout)
 
-## Edit this project
+## How to use this project
 
-**edit** `config/env.yml`
+- edit env in `config/env.yml`
 
-**edit** `import path`
+- edit import path
 
-## Explain
+- run !!
 
-`main.go` main of program
-
-`src/connection` for 3rd party connect
-
-`src/controller` control route
-
-`src/middleware` set middleware
-
-`src/route` set common middleware and routing
-
-`src/service` business logic
-
-`src/utils` for utility
-
-## Run
+## Run !!
 
 **start normal**
 
 `make start`
 
-**start docker**
+**start with docker**
 
 `make docker`
+
+## Folder Explain
+
+`main.go` main program
+
+`src/connection` for 3rd party connection
+
+`src/controller` controller in `MVC` model
+
+`src/middleware` custom middleware
+
+`src/route` setup middleware and routing
+
+`src/service` business logic
+
+`src/utils` for utility
