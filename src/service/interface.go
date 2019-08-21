@@ -1,7 +1,9 @@
 package service
 
+import "context"
+
 type User interface {
-	GetName() string
+	GetName(context.Context) string
 	SetName(string)
 	Clear()
 }
