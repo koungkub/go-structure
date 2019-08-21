@@ -1,6 +1,9 @@
 package service
 
-import "reflect"
+import (
+	"context"
+	"reflect"
+)
 
 type Admin struct {
 	Name string
@@ -11,7 +14,7 @@ func (admin *Admin) SetName(name string) {
 	admin.Name = name
 }
 
-func (admin Admin) GetName() string {
+func (admin Admin) GetName(ctx context.Context) string {
 
 	admin.Name = "eiei"
 	return admin.Name

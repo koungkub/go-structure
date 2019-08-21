@@ -3,6 +3,8 @@ package controller
 import (
 	"net/http"
 
+	"github.com/koungkub/go-structure/src/utils"
+
 	"github.com/koungkub/go-structure/src/service"
 	"github.com/labstack/echo/v4"
 	"gopkg.in/go-playground/validator.v9"
@@ -10,7 +12,15 @@ import (
 
 func GetNameController(user service.User) echo.HandlerFunc {
 	return func(c echo.Context) error {
-		name := user.GetName()
+
+		span, log := utils.ExtractSpanAndGetLog("Get name", c)
+		defer span.Finish()
+		ctx, cancel := utils.GetContextWithSpan(span)
+		defer cancel()
+
+		log.Debug("eiei")
+
+		name := user.GetName(ctx)
 		return c.JSON(http.StatusOK, echo.Map{
 			"message": name,
 		})
@@ -32,7 +42,7 @@ func SetNameController(user service.User, validate *validator.Validate) echo.Han
 		}
 
 		return c.JSON(http.StatusCreated, echo.Map{
-			"name": user.GetName(),
+			"name": "q",
 		})
 	}
 }
