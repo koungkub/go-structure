@@ -24,18 +24,4 @@ this project not following [golang-project-layout](https://github.com/golang-sta
 
 `make docker`
 
-## Folder Explain
-
-`main.go` main program
-
-`src/connection` for 3rd party connection
-
-`src/controller` controller in `MVC` model
-
-`src/middleware` custom middleware
-
-`src/route` setup middleware and routing
-
-`src/service` business logic
-
-`src/utils` for utility
+eiei
